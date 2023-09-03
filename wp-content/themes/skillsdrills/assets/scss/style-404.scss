@@ -1,0 +1,191 @@
+.page-404 {
+  overflow: hidden;
+  .main-header {
+    width: 100%;
+    background-color: unset;
+    position: absolute;
+    .main-header__first-background {
+      display: none;
+    }
+    .main-header__second-background {
+      display: none;
+    }
+    .main-header__menu-background {
+      display: none;
+    }
+    .main-header__mobile-background {
+      display: none;
+    }
+    .main-header__header {
+      .header__bottom-header {
+        .bottom-header__left-content {
+          display: none;
+        }
+        .bottom-header__right-content {
+          display: none;
+        }
+        .bottom-header__desktop-menu {
+          position: relative;
+          top: unset;
+          left: -2000px;
+          margin-top: 120px;
+          margin-bottom: unset;
+          width: 950px;
+          .menu__text {
+            width: 435px;
+          }
+        }
+        .desktop-menu__active {
+          top: unset;
+          left: 0px;
+        }
+      }
+    }
+    .main-header__scrollbar {
+      display: none;
+    }
+  }
+  .body__404 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: $black;
+    background-image: url("/wp-content/themes/skillsdrills/assets/images/404-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .body__active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      right: 0;
+      transition: right 1s ease;
+      .top {
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        margin-top: 234px;
+        p {
+          font-family: $inter;
+          font-weight: 500;
+          font-size: 353px;
+          line-height: 428px;
+          color: $white;
+          text-transform: uppercase;
+        }
+        div {
+          width: 258px;
+          height: 258px;
+          background-color: $green;
+          border-radius: 100%;
+          overflow: hidden;
+          img {
+            width: 258px;
+            height: 258px;
+          }
+        }
+      }
+      .middle {
+        position: relative;
+        z-index: 2;
+        width: 270px;
+        p {
+          text-align: center;
+          font-family: $inter;
+          font-weight: 700;
+          font-size: 30px;
+          line-height: 36px;
+          color: $white;
+          text-transform: uppercase;
+        }
+      }
+      .bottom {
+        position: relative;
+        z-index: 2;
+        width: 153px;
+        height: 44px;
+        background-color: $green;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $inter;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 18px;
+        color: $white;
+        border-radius: 22px;
+        margin-top: 35px;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background-color: $violet;
+        }
+      }
+    }
+    .active {
+      right: -2000px;
+      transition: right 1s ease;
+    }
+  }
+}
+
+@include mobile {
+  .page-404 {
+    .main-header {
+      .main-header__header {
+        .header__bottom-header {
+          padding-bottom: unset;
+          .bottom-header__desktop-menu {
+            display: none;
+          }
+          .desktop-menu__active {
+            display: none;
+          }
+        }
+        .header__mobile-menu {
+          position: relative;
+          margin-top: unset;
+          margin-bottom: unset;
+        }
+      }
+    }
+    .body__404 {
+      background-image: url("/wp-content/themes/skillsdrills/assets/images/404-mobile_background.png");
+      .body__active {
+        .top {
+          display: flex;
+          align-items: center;
+          position: relative;
+          z-index: 2;
+          margin-top: 216px;
+          p {
+            font-size: 177px;
+            line-height: 215px;
+          }
+          div {
+            width: 129px;
+            height: 129px;
+            img {
+              width: 129px;
+              height: 129px;
+            }
+          }
+        }
+        .middle {
+          width: 185px;
+          p {
+            font-size: 20px;
+            line-height: 24px;
+          }
+        }
+        .bottom {
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+}

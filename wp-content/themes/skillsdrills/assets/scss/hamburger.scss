@@ -1,0 +1,40 @@
+$burger-width: 32px;
+$burger-layer-height: 5px;
+$burger-layer-spacing: 7px;
+$burger-layer-color: $white;
+
+.nav-toggle {
+	width:$burger-width;
+	-webkit-tap-highlight-color: transparent;
+	span {
+		position: relative;
+		display: block;
+		height: $burger-layer-height;
+		width: 100%;
+		background: $burger-layer-color;
+		margin-bottom: $burger-layer-spacing;
+		transform: translateZ(0);
+		transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s, opacity 0.2s ease-in-out 0.2s, background 0.3s ease-in-out;
+		&:last-child {
+			margin-bottom: 0!important;
+		}
+
+	}
+	&.clicked span:first-child {
+		transform: translateY(12px) rotateZ(-135deg);
+		background: $lime;
+	}
+	&.clicked span:nth-child(2) {
+		opacity: 0;
+		background: $lime;
+	}
+	&.clicked span:last-child {
+		transform: translateY(-12px) rotateZ(135deg);
+		background: $lime;
+	}
+	&:hover {
+		span {
+			background: $lime;
+		}
+	}
+}
